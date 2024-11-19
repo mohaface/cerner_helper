@@ -8,7 +8,7 @@ local URL = require("socket.url")
 local json = (loadfile "./libs/JSON.lua")()
 local redis1 = require("redis")
 local redis = redis1.connect("127.0.0.1", 6379)
-local token = 'توکن'
+local token = '8159310703:AAEovkoy7rTE12ADfVrqmwgUM3V66jkZs7s'
 local Bot_Api = 'https://api.telegram.org/bot' .. token
 local offset = 0 
 minute = 60
@@ -16,7 +16,7 @@ hour = 3600
 day = 86400
 week = 604800 
 MsgTime = os.time() - 5
-SUDO_ID = {85,69}
+SUDO_ID = {1303275036,7054361310}
 -----CerNer Company
 function is_sudo(msg)
   local var = false
@@ -296,7 +296,7 @@ local Company = msg.inline_query
 if Company.query:match('-%d+') then
 chat_id = '-'..Company.query:match('%d+')
 redis:set('chat',chat_id)
-if Company.from.id == 85 or Company.from.id == 69 then
+if Company.from.id == 1303275036 or Company.from.id == 7054361310 then
 if redis:get('CheckBot:'..chat_id) then
 local keyboard = {}
 keyboard.inline_keyboard = {{{text = '• Log into management menu', callback_data = 'Menu:'..chat_id}},{{text= '• Exit' ,callback_data = 'Exit:'..chat_id}},{{text="• Join our channel",url="https://telegram.me/CerNerCompany"}}}
